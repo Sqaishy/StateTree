@@ -28,8 +28,16 @@ namespace StateTree
 
 		public StateBlackboard(StateBlackboard blackboard)
 		{
+			if (blackboard == null)
+				return;
+
 			foreach (StateContext context in blackboard.Contexts)
+			{
+				if (context == null)
+					continue;
+
 				AddContext(context.Clone());
+			}
 		}
 
 		public bool TryGetContext<T>(out T value) where T : StateContext

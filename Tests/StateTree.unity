@@ -149,31 +149,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackboard:
-    rid: 3237347280102883666
+    rid: 3237347280102883697
   references:
     version: 2
     RefIds:
-    - rid: 3237347280102883666
+    - rid: 3237347280102883697
       type: {class: StateBlackboard, ns: StateTree, asm: StateTree}
       data:
         stateContexts:
-        - rid: 3237347280102883667
-        - rid: 3237347280102883668
-        - rid: 3237347280102883669
-    - rid: 3237347280102883667
+        - rid: 3237347280102883698
+        - rid: 3237347280102883699
+        - rid: 3237347280102883700
+    - rid: 3237347280102883698
       type: {class: CharacterContext, ns: StateTree, asm: StateTree}
       data:
         isTrue: 1
         target: {fileID: 2057049903}
-    - rid: 3237347280102883668
+    - rid: 3237347280102883699
       type: {class: TestContext, ns: StateTree, asm: StateTree}
       data:
         text: Awesome!
         direction: {x: 0, y: 0, z: 0}
-    - rid: 3237347280102883669
-      type: {class: CustomStateContext, ns: StateTree, asm: StateTree}
+    - rid: 3237347280102883700
+      type: {class: CustomStateContext, ns: StateTree, asm: Assembly-CSharp}
       data:
-        customFloat: 63
+        customFloat: 0
 --- !u!4 &78907257
 Transform:
   m_ObjectHideFlags: 0
@@ -184,6 +184,76 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &202914954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 202914956}
+  - component: {fileID: 202914955}
+  m_Layer: 0
+  m_Name: NEW AGENT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &202914955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202914954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1297fa5665da41f19363efaa2aacc548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blackboard:
+    rid: 3237347280102883949
+  references:
+    version: 2
+    RefIds:
+    - rid: 3237347280102883949
+      type: {class: StateBlackboard, ns: StateTree, asm: StateTree}
+      data:
+        stateContexts:
+        - rid: 3237347280102883950
+        - rid: 3237347280102883951
+        - rid: 3237347280102883952
+    - rid: 3237347280102883950
+      type: {class: CharacterContext, ns: StateTree, asm: StateTree}
+      data:
+        isTrue: 1
+        target: {fileID: 78907257}
+    - rid: 3237347280102883951
+      type: {class: TestContext, ns: StateTree, asm: StateTree}
+      data:
+        text: SOmetHing ElsE
+        direction: {x: 1, y: 2, z: 3}
+    - rid: 3237347280102883952
+      type: {class: CustomStateContext, ns: StateTree, asm: Assembly-CSharp}
+      data:
+        customFloat: 13.57
+--- !u!4 &202914956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202914954}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2944555, y: 1.0937994, z: 0.013095047}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -409,3 +479,4 @@ SceneRoots:
   - {fileID: 2057049903}
   - {fileID: 214127867}
   - {fileID: 78907257}
+  - {fileID: 202914956}

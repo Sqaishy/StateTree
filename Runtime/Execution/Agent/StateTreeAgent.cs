@@ -62,19 +62,9 @@ namespace StateTree
 		[ContextMenu("Rebuild Blackboard")]
 		private void RebuildBlackboard()
 		{
-			StateBlackboard copy = null;
+			StateBlackboard copy = Blackboard != null ? new StateBlackboard(Blackboard) : null;
 
-			if (Blackboard != null)
-				copy = new StateBlackboard(Blackboard);
-
-			//What I want to do is copy whatever the blackboard has before resetting it
 			CreateBlackboard();
-			//Then after re-creating the blackboard set its values to whatever I had copied
-			//So if I set values in the inspector I don't lose them when resetting the blackboard
-			//as that is very annoying when adding new state contexts
-
-			//Loop through the newly created blackboard and check if any state contexts match
-			//from the copy, if they do set the values of the blackboard to the ones from the copy
 
 			if (copy == null)
 				return;
