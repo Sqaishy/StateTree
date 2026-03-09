@@ -1,5 +1,4 @@
 using System;
-using Unity.Behavior;
 using UnityEngine;
 
 namespace StateTree
@@ -11,10 +10,10 @@ namespace StateTree
 			Blackboard.TryGetContext(out CharacterContext context);
 
 			StateModule defaultModule = new StateModule("DefaultState");
-			defaultModule.SetRoot(new StatusAction(Status.Running));
+			defaultModule.AddChild(new StatusAction(Status.Running));
 
 			StateModule runModule = new StateModule("RunState");
-			runModule.SetRoot(new WaitAction(5f));
+			runModule.AddChild(new WaitAction(5f));
 
 			Condition predicateCondition = new PredicateCondition(() => context.isTrue);
 			defaultModule.AddTransition(runModule, new [] { predicateCondition},
