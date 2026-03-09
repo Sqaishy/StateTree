@@ -1,0 +1,4 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:Label text="Context" name="ContextName" style="font-size: 18px;" />
+    <ui:VisualElement name="Content" style="flex-grow: 1; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; background-color: rgba(0, 0, 0, 0.12); padding-left: 7px; margin-left: 6px; margin-right: 6px; padding-top: 4px; padding-bottom: 4px; padding-right: 7px; margin-bottom: 10px;" />
+</ui:UXML>

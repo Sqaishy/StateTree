@@ -1,0 +1,50 @@
+.Inactive {
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-left-color: rgb(0, 178, 188);
+    border-right-color: rgb(0, 178, 188);
+    border-top-color: rgb(0, 178, 188);
+    border-bottom-color: rgb(0, 178, 188);
+}
+
+.Running {
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-left-color: rgb(188, 100, 0);
+    border-right-color: rgb(188, 100, 0);
+    border-top-color: rgb(188, 100, 0);
+    border-bottom-color: rgb(188, 100, 0);
+}
+
+.Success {
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-left-color: rgb(25, 178, 24);
+    border-right-color: rgb(25, 178, 24);
+    border-top-color: rgb(25, 178, 24);
+    border-bottom-color: rgb(25, 178, 24);
+}
+
+.Failure {
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-left-color: rgb(164, 22, 22);
+    border-right-color: rgb(164, 22, 22);
+    border-top-color: rgb(164, 22, 22);
+    border-bottom-color: rgb(164, 22, 22);
+}
+
+.Border {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}

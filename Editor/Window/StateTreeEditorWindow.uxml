@@ -1,0 +1,64 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/_Project/StateTree/Editor/Window/StateTreeEditorWindow.uss?fileID=7433441132597879392&amp;guid=a4ce49792541ba242ab13e6454e7bdb8&amp;type=3#StateTreeEditorWindow" />
+    <Unity.AppUI.UI.Panel style="flex-grow: 1;">
+        <StateTree.Editor.SplitView fixed-pane-initial-dimension="250" orientation="Horizontal" style="flex-grow: 1;">
+            <ui:VisualElement style="flex-grow: 1;">
+                <uie:Toolbar style="justify-content: flex-end;">
+                    <uie:ToolbarButton text="Add" name="AddModule" />
+                    <uie:ToolbarButton text="Remove" enabled="true" name="RemoveModule" />
+                </uie:Toolbar>
+                <ui:ScrollView name="ModuleList" />
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 1; width: 209px;">
+                <StateTree.Editor.Window.ModuleViewer>
+                    <ui:VisualElement style="flex-grow: 0; margin-top: 5px; flex-direction: row;">
+                        <ui:Label text="Module Viewer" />
+                        <ui:Label text="Module Viewer" name="ModuleName" />
+                        <Unity.AppUI.UI.ActionButton label="Set Default" size="S" name="SetDefault" style="font-size: 8px; align-self: center;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement style="flex-grow: 1;">
+                        <ui:VisualElement style="flex-grow: 0;">
+                            <ui:VisualElement style="flex-grow: 1; flex-direction: row; justify-content: flex-end;">
+                                <ui:VisualElement style="flex-grow: 1; justify-content: center;">
+                                    <ui:Label text="Node Tree" />
+                                </ui:VisualElement>
+                                <Unity.AppUI.UI.ActionButton label="Add" selected="false" icon-variant="Bold" name="AddNode" style="align-self: center; min-width: 40px;" />
+                                <Unity.AppUI.UI.ActionButton label="Remove" selected="false" icon-variant="Bold" name="RemoveNode" style="align-self: center; min-width: 40px;" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="NodeTree" style="flex-grow: 1;">
+                                <StateTree.Editor.TreeItem>
+                                    <StateTree.Editor.TreeItem>
+                                        <StateTree.Editor.TreeItem />
+                                        <StateTree.Editor.TreeItem />
+                                    </StateTree.Editor.TreeItem>
+                                    <StateTree.Editor.TreeItem>
+                                        <StateTree.Editor.TreeItem />
+                                        <StateTree.Editor.TreeItem>
+                                            <StateTree.Editor.TreeItem />
+                                            <StateTree.Editor.TreeItem />
+                                        </StateTree.Editor.TreeItem>
+                                    </StateTree.Editor.TreeItem>
+                                </StateTree.Editor.TreeItem>
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        <ui:VisualElement style="flex-grow: 1;">
+                            <ui:VisualElement style="flex-grow: 0;">
+                                <ui:Label text="Transitions" />
+                            </ui:VisualElement>
+                            <ui:VisualElement style="flex-grow: 1;">
+                                <ui:VisualElement style="flex-grow: 0; flex-direction: row;">
+                                    <ui:Label text="On Module Success" />
+                                    <ui:DropdownField choices="Default,Idle State,Investigate State,Movement State" />
+                                </ui:VisualElement>
+                                <ui:VisualElement style="flex-grow: 0; flex-direction: row;">
+                                    <ui:Label text="On Module Failure" />
+                                    <ui:DropdownField choices="Default (Idle State),Investigate State,Movement State" />
+                                </ui:VisualElement>
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </StateTree.Editor.Window.ModuleViewer>
+            </ui:VisualElement>
+        </StateTree.Editor.SplitView>
+    </Unity.AppUI.UI.Panel>
+</ui:UXML>

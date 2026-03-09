@@ -1,0 +1,6 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/_Project/StateTree/Editor/Inspector/Assets/StateBadge.uss?fileID=7433441132597879392&amp;guid=1d7d9255d49e68b46ba0e713a9b036be&amp;type=3#StateBadge" />
+    <ui:VisualElement class="Border" style="flex-grow: 0; -unity-background-image-tint-color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0.2); flex-shrink: 0; align-items: stretch; justify-content: flex-start; align-self: flex-start; margin-right: 4px; margin-bottom: 4px;">
+        <ui:Label text="State" name="Name" style="margin-left: 2px; margin-right: 2px; padding-left: 3px; padding-right: 3px; margin-top: 2px; margin-bottom: 2px; padding-top: 3px; padding-bottom: 3px;" />
+    </ui:VisualElement>
+</ui:UXML>

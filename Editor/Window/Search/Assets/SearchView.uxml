@@ -1,0 +1,8 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="Header" style="flex-grow: 0; flex-direction: row; justify-content: flex-start; margin-top: 5px; margin-left: 5px;">
+        <Unity.AppUI.UI.IconButton quiet="true" icon="caret-left" />
+        <ui:Label text="Item" />
+    </ui:VisualElement>
+    <Unity.AppUI.UI.SearchBar name="SearchBar" />
+    <ui:ListView name="SearchResults" style="flex-grow: 1;" />
+</ui:UXML>

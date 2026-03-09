@@ -1,0 +1,14 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="Actions" style="flex-grow: 0; flex-direction: row; justify-content: space-between; align-self: auto; align-content: auto; align-items: stretch; flex-wrap: nowrap; margin-bottom: 4px;">
+        <ui:Button text="First" name="First" />
+        <ui:Button text="Previous" name="Previous" />
+        <ui:VisualElement style="flex-grow: 0; justify-content: center; align-self: auto; align-items: center; flex-shrink: 0; color: rgb(0, 0, 0);">
+            <ui:Label text="2 / 5" name="Index" style="align-self: stretch; color: rgb(255, 255, 255);" />
+        </ui:VisualElement>
+        <ui:Button text="Next" name="Next" />
+        <ui:Button text="Last" name="Last" />
+    </ui:VisualElement>
+    <ui:VisualElement name="CurrentInfoContainer" style="flex-grow: 0; flex-direction: row; justify-content: space-between; flex-shrink: 1; align-content: stretch;">
+        <StateTree.Editor.StateInfo name="CurrentInfo" style="align-self: stretch; flex-grow: 1; width: 46%;" />
+    </ui:VisualElement>
+</ui:UXML>

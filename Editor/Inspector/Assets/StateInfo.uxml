@@ -1,0 +1,29 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement style="flex-grow: 1; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; align-self: stretch;">
+        <ui:VisualElement style="flex-grow: 0; margin-bottom: 2px; align-content: flex-start;">
+            <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+                <ui:Label text="CURRENT STATE" name="Title" data-source-type="StateTree.Editor.StateInfo, StateTreeEditor" style="margin-top: 2px; margin-right: 2px; margin-bottom: 2px; margin-left: 2px; padding-right: 4px; padding-left: 2px;" />
+                <ui:Label text="[Running]" name="Status" data-source-type="StateTree.Editor.StateInfo, StateTreeEditor" style="margin-top: 2px; margin-right: 2px; margin-bottom: 2px; margin-left: 2px; padding-right: 4px; padding-left: 2px;" />
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 0; flex-shrink: 1; margin-top: 5px; flex-direction: row; justify-content: space-between; align-items: flex-end; align-self: auto; align-content: auto;">
+                <StateTree.Editor.StateBadge name="CurrentState" />
+                <ui:Label text="0s" name="Time" style="font-size: 10px; justify-content: flex-start; flex-direction: row; align-self: center; -unity-text-align: middle-left; align-items: stretch; align-content: flex-start; margin-top: 0;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 0; flex-direction: column; margin-bottom: 10px;">
+            <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+                <ui:Label text="ACTIVE NODES" name="Title" data-source-type="StateTree.Editor.StateInfo, StateTreeEditor" style="margin-top: 2px; margin-right: 2px; margin-bottom: 2px; margin-left: 2px; padding-right: 4px; padding-left: 2px; font-size: 10px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="TreeView" style="flex-grow: 1; align-content: auto; align-self: auto; align-items: stretch;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 0;">
+            <ui:Label text="TRANSITIONS" style="margin-top: 2px; margin-right: 2px; margin-bottom: 2px; margin-left: 2px; padding-right: 4px; padding-left: 2px;" />
+            <ui:VisualElement name="Transitions" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap; margin-top: 5px;">
+                <StateTree.Editor.StateBadge />
+                <StateTree.Editor.StateBadge />
+                <StateTree.Editor.StateBadge />
+                <StateTree.Editor.StateBadge />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
