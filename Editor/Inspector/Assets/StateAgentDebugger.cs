@@ -15,7 +15,7 @@ namespace StateTree.Editor
         public StateAgentDebugger()
         {
             VisualTreeAsset visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
-                "Assets/_Project/StateTree/Editor/Inspector/Assets/StateAgentDebugger.uxml");
+                AssetDatabase.GUIDToAssetPath("365d9b4a740b93d4faca494351d43a2c"));
             visualTree.CloneTree(this);
 
             history = this.Q<StateAgentHistory>();

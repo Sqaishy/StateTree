@@ -19,7 +19,7 @@ namespace StateTree.Editor
 		public StateBadge()
 		{
 			VisualTreeAsset visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
-				"Assets/_Project/StateTree/Editor/Inspector/Assets/StateBadge.uxml");
+				AssetDatabase.GUIDToAssetPath("28b8ae4ea70913042af7ef31111d8b2a"));
 			visualTree.CloneTree(this);
 		}
 

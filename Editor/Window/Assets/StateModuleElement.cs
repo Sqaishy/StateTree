@@ -21,7 +21,7 @@ namespace StateTree.Editor.Window
         public StateModuleElement(StateModule module)
         {
             AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
-                "Assets/_Project/StateTree/Editor/Window/Assets/StateModule.uxml")
+                AssetDatabase.GUIDToAssetPath("dc0f14542ad641b44802f8fdb301c488"))
                 .CloneTree(this);
 
             StateModule = module;

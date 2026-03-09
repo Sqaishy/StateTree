@@ -12,7 +12,7 @@ namespace StateTree.Editor
         public BlackboardContext()
         {
             VisualTreeAsset visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
-                "Assets/_Project/StateTree/Editor/Inspector/Assets/BlackboardContext.uxml");
+                AssetDatabase.GUIDToAssetPath("72084613b1e788045a9a7b50caa5dc57"));
             visualTree.CloneTree(this);
         }
 

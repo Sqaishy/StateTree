@@ -14,7 +14,7 @@ namespace StateTree.Editor
         public TreeItem()
         {
             VisualTreeAsset visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
-                "Assets/_Project/StateTree/Editor/Inspector/Assets/TreeItem.uxml");
+                AssetDatabase.GUIDToAssetPath("b46c45e8df53e544d8cc1b101e045ad9"));
             visualTree.CloneTree(this);
         }
 

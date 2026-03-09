@@ -44,7 +44,7 @@ namespace StateTree.Editor.Window.Search
 		public SearchView()
 		{
 			AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
-				"Assets/_Project/StateTree/Editor/Window/Search/Assets/SearchView.uxml")
+				AssetDatabase.GUIDToAssetPath("c1ab90a5ec87e114fb643e290e8291bc"))
 				.CloneTree(this);
 
 			titleLabel = this.Q<VisualElement>("Header").Q<Label>();

@@ -53,7 +53,7 @@ namespace StateTree.Editor
         public StateInfo()
         {
             VisualTreeAsset visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
-                "Assets/_Project/StateTree/Editor/Inspector/Assets/StateInfo.uxml");
+                AssetDatabase.GUIDToAssetPath("8d11685595cb9444886bf05a3b5fef8d"));
             visualTree.CloneTree(this);
 
             timeLabel = this.Q<Label>("Time");

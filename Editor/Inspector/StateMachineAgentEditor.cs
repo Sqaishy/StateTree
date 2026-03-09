@@ -18,7 +18,7 @@ namespace StateTree.Editor
             blackboardProperty = serializedObject.FindProperty("blackboard");
 
             inspectorAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
-                "Assets/_Project/StateTree/Editor/Inspector/Assets/StateAgentInspector.uxml");
+                AssetDatabase.GUIDToAssetPath("857f06a924457a24eae3b806f19a3abd"));
 
             EditorApplication.update += Update;
         }

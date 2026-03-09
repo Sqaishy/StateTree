@@ -26,7 +26,7 @@ namespace StateTree.Editor
         public StateAgentHistory()
         {
             VisualTreeAsset visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
-                "Assets/_Project/StateTree/Editor/Inspector/Assets/StateAgentHistory.uxml");
+                AssetDatabase.GUIDToAssetPath("77e195bd214c21943b6a178d68d4994d"));
             visualTree.CloneTree(this);
 
             firstButton = this.Q<Button>("First");
