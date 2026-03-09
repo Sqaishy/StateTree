@@ -1,5 +1,5 @@
 {
-    "name": "StateTreeEditor",
+    "name": "StateTree.Editor",
     "rootNamespace": "StateTree.Editor",
     "references": [
         "GUID:e49c3569e082dea4c9c959b3db7ed97e",

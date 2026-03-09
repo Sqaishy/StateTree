@@ -49,6 +49,8 @@ namespace StateTree
 		protected override void Exit()
 		{
 			currentTimer = 0;
+
+			base.Exit();
 		}
 	}
 }

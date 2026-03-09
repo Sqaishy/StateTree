@@ -23,10 +23,5 @@ namespace StateTree
 
 			return Status.Running;
 		}
-
-		protected override void Exit()
-		{
-			Module.ExitNode(Child);
-		}
 	}
 }

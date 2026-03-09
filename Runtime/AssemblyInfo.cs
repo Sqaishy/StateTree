@@ -1,3 +1,3 @@
 using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("StateTreeEditor")]
+[assembly: InternalsVisibleTo("StateTree.Editor")]

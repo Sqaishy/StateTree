@@ -11,6 +11,11 @@ namespace StateTree
 		[field: SerializeReference]
 		public StateNode Child { get; internal set; }
 
+		protected override void Exit()
+		{
+			Module.ExitNode(Child);
+		}
+
 		protected Status RestartChild()
 		{
 			Module.ExitNode(Child);

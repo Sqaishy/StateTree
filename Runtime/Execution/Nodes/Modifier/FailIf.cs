@@ -10,7 +10,7 @@ namespace StateTree
 
 		public FailIf(Condition[] conditions) : this(conditions, ConditionOperator.AllTrue)
 		{
-			
+
 		}
 
 		public FailIf(Condition[] conditions, ConditionOperator conditionOperator)
@@ -21,7 +21,7 @@ namespace StateTree
 
 		protected override Status Enter()
 		{
-			foreach (Condition condition in conditions) 
+			foreach (Condition condition in conditions)
 				condition.Enter();
 
 			if (Condition.CheckConditions(conditions, conditionOperator))
@@ -39,21 +39,18 @@ namespace StateTree
 		{
 			Status status = Child.OnUpdate();
 
-			if (status == Status.Success)
-				return Status.Success;
-			if (status == Status.Failure)
-				return Status.Failure;
-
 			if (Condition.CheckConditions(conditions, conditionOperator))
 				return Status.Failure;
-			
-			return Status.Running;
+
+			return status;
 		}
 
 		protected override void Exit()
 		{
-			foreach (Condition condition in conditions) 
+			foreach (Condition condition in conditions)
 				condition.Exit();
+
+			base.Exit();
 		}
 	}
 }
