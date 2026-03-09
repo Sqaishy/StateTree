@@ -1,11 +1,7 @@
 {
   "name": "com.sqaishy.statetree",
-  "displayName": State Tree",
   "version": "0.0.1",
   "dependencies": {
     "com.unity.dt.app-ui": "2.0.0-pre.16",
   },
-  "author": {
-    "name": Jake Budd
-  }
 }
