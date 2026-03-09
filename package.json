@@ -1,7 +1,8 @@
 {
   "name": "sqaishy.statetree",
   "version": "1.0.0",
+  "displayName": "State Tree",
   "dependencies": {
     "com.unity.dt.app-ui": "2.0.0-pre.16",
-  },
+ },
 }
