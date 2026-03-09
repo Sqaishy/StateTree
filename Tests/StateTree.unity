@@ -149,28 +149,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackboard:
-    rid: 3237347275969921343
+    rid: 3237347280102883666
   references:
     version: 2
     RefIds:
-    - rid: 3237347275969921343
+    - rid: 3237347280102883666
       type: {class: StateBlackboard, ns: StateTree, asm: StateTree}
       data:
         stateContexts:
-        - rid: 3237347275969921344
-        - rid: 3237347275969921345
-        - rid: 3237347275969921346
-    - rid: 3237347275969921344
+        - rid: 3237347280102883667
+        - rid: 3237347280102883668
+        - rid: 3237347280102883669
+    - rid: 3237347280102883667
       type: {class: CharacterContext, ns: StateTree, asm: StateTree}
       data:
         isTrue: 1
         target: {fileID: 2057049903}
-    - rid: 3237347275969921345
+    - rid: 3237347280102883668
       type: {class: TestContext, ns: StateTree, asm: StateTree}
       data:
-        text: 
+        text: Awesome!
         direction: {x: 0, y: 0, z: 0}
-    - rid: 3237347275969921346
+    - rid: 3237347280102883669
       type: {class: CustomStateContext, ns: StateTree, asm: StateTree}
       data:
         customFloat: 63

@@ -1,9 +1,7 @@
 {
     "name": "StateTree",
     "rootNamespace": "StateTree",
-    "references": [
-        "GUID:73907d139b13f8a43b7e3e95c329d30a"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
