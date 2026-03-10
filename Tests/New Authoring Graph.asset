@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee01437602974c749ea67b26e2e10d99, type: 3}
+  m_Name: New Authoring Graph
+  m_EditorClassIdentifier: 
+  stateGraph: {fileID: 2266762546527200341}
+--- !u!114 &2266762546527200341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dadb76af09394540a3f800b58de306de, type: 3}
+  m_Name: New Authoring Graph_StateTree
+  m_EditorClassIdentifier: 
+  nodes: []
+  defaultState:
+    rid: -2
+  sourceBlackboard:
+    rid: 3237347298612347118
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 3237347298612347118
+      type: {class: StateBlackboard, ns: StateTree, asm: StateTree}
+      data:
+        stateContexts: []

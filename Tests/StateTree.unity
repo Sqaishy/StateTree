@@ -149,28 +149,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackboard:
-    rid: 3237347280102883697
+    rid: 3237347298612347444
   references:
     version: 2
     RefIds:
-    - rid: 3237347280102883697
+    - rid: 3237347298612347444
       type: {class: StateBlackboard, ns: StateTree, asm: StateTree}
       data:
         stateContexts:
-        - rid: 3237347280102883698
-        - rid: 3237347280102883699
-        - rid: 3237347280102883700
-    - rid: 3237347280102883698
+        - rid: 3237347298612347445
+        - rid: 3237347298612347446
+        - rid: 3237347298612347447
+    - rid: 3237347298612347445
       type: {class: CharacterContext, ns: StateTree, asm: StateTree}
       data:
         isTrue: 1
         target: {fileID: 2057049903}
-    - rid: 3237347280102883699
+    - rid: 3237347298612347446
       type: {class: TestContext, ns: StateTree, asm: StateTree}
       data:
         text: Awesome!
         direction: {x: 0, y: 0, z: 0}
-    - rid: 3237347280102883700
+    - rid: 3237347298612347447
       type: {class: CustomStateContext, ns: StateTree, asm: Assembly-CSharp}
       data:
         customFloat: 0
@@ -184,6 +184,51 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &136777062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 136777064}
+  - component: {fileID: 136777063}
+  m_Layer: 0
+  m_Name: Graph Setter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &136777063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136777062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bddf904cbc94b36865ed6643f10ad63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateGraph: {fileID: 2266762546527200341, guid: cafca269f335df645ba43e18e84e22f8, type: 2}
+--- !u!4 &136777064
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136777062}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2944555, y: 1.0937994, z: 0.013095047}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -219,28 +264,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackboard:
-    rid: 3237347280102883949
+    rid: 3237347298612347440
   references:
     version: 2
     RefIds:
-    - rid: 3237347280102883949
+    - rid: 3237347298612347440
       type: {class: StateBlackboard, ns: StateTree, asm: StateTree}
       data:
         stateContexts:
-        - rid: 3237347280102883950
-        - rid: 3237347280102883951
-        - rid: 3237347280102883952
-    - rid: 3237347280102883950
+        - rid: 3237347298612347441
+        - rid: 3237347298612347442
+        - rid: 3237347298612347443
+    - rid: 3237347298612347441
       type: {class: CharacterContext, ns: StateTree, asm: StateTree}
       data:
         isTrue: 1
         target: {fileID: 78907257}
-    - rid: 3237347280102883951
+    - rid: 3237347298612347442
       type: {class: TestContext, ns: StateTree, asm: StateTree}
       data:
         text: SOmetHing ElsE
         direction: {x: 1, y: 2, z: 3}
-    - rid: 3237347280102883952
+    - rid: 3237347298612347443
       type: {class: CustomStateContext, ns: StateTree, asm: Assembly-CSharp}
       data:
         customFloat: 13.57
@@ -380,6 +425,66 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &1425205464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1425205466}
+  - component: {fileID: 1425205465}
+  m_Layer: 0
+  m_Name: Behaviour
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1425205465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425205464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0038c16c34866b4f9e25c9c0dc0f7e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Graph: {fileID: 0}
+  m_BlackboardVariableOverridesList:
+  - rid: 3237347298083865382
+  m_IsInitialised: 0
+  m_IsStarted: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3237347298083865382
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 1
+          m_Value1: 0
+        Name: Self
+        m_Value: {fileID: 1425205464}
+--- !u!4 &1425205466
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425205464}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2944555, y: 1.0937994, z: 0.013095047}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2057049900
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,3 +585,5 @@ SceneRoots:
   - {fileID: 214127867}
   - {fileID: 78907257}
   - {fileID: 202914956}
+  - {fileID: 136777064}
+  - {fileID: 1425205466}
