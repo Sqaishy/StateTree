@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee01437602974c749ea67b26e2e10d99, type: 3}
-  m_Name: New Authoring Graph
+  m_Script: {fileID: 11500000, guid: 2ec2fabed3304a899da1b9b6cdefab66, type: 3}
+  m_Name: New Clown Authoring Graph
   m_EditorClassIdentifier: 
-  stateGraph: {fileID: 2266762546527200341}
---- !u!114 &2266762546527200341
+  stateGraph: {fileID: 5489058151081435050}
+--- !u!114 &5489058151081435050
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -23,19 +23,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dadb76af09394540a3f800b58de306de, type: 3}
-  m_Name: New Authoring Graph_StateTree
+  m_Name: New Clown Authoring Graph_StateTree
   m_EditorClassIdentifier: 
   nodes: []
   defaultState:
     rid: -2
   sourceBlackboard:
-    rid: 3237347298612347118
+    rid: 3237347298612347531
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 3237347298612347118
+    - rid: 3237347298612347531
       type: {class: StateBlackboard, ns: StateTree, asm: StateTree}
       data:
         stateContexts: []

@@ -1,16 +1,11 @@
-using System;
-using StateTree;
-using Unity.AppUI.Core;
-using Unity.AppUI.UI;
 using Unity.Properties;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
-using DragAndDrop = UnityEditor.DragAndDrop;
 using Object = UnityEngine.Object;
 
-namespace StateTreeSystem.Authoring.Code
+namespace StateTree.Authoring.Code
 {
 	public class TestGraphSetter : MonoBehaviour
 	{
@@ -21,7 +16,7 @@ namespace StateTreeSystem.Authoring.Code
 	public class GraphSetterEditor : Editor
 	{
 		private TestGraphSetter targetObject;
-		private TestVisitor visitor = new();
+		private TestVisitor<StateGraph> visitor = new();
 		private ObjectField graphField;
 		private IProperty<TestGraphSetter> graphProperty;
 
@@ -66,7 +61,7 @@ namespace StateTreeSystem.Authoring.Code
 
 		private void ValueChanged(ChangeEvent<Object> evt)
 		{
-			visitor.NewStateGraph = evt.newValue as StateGraph;
+			visitor.NewValue = evt.newValue as StateGraph;
 
 			PropertyContainer.Accept(visitor, ref targetObject);
 
@@ -94,9 +89,9 @@ namespace StateTreeSystem.Authoring.Code
 		}
 	}
 
-	public class TestVisitor : IPropertyBagVisitor, IPropertyVisitor
+	public class TestVisitor<T> : IPropertyBagVisitor, IPropertyVisitor
 	{
-		public StateGraph NewStateGraph { get; set;}
+		public T NewValue { get; set; }
 
 		public void Visit<TContainer>(IPropertyBag<TContainer> properties, ref TContainer container)
 		{
@@ -108,10 +103,10 @@ namespace StateTreeSystem.Authoring.Code
 
 		public void Visit<TContainer, TValue>(Property<TContainer, TValue> property, ref TContainer container)
 		{
-			if (typeof(TValue) != typeof(StateGraph))
+			if (typeof(TValue) != typeof(T))
 				return;
 
-			property.SetValue(ref container, (TValue)(object)NewStateGraph);
+			property.SetValue(ref container, (TValue)(object)NewValue);
 		}
 	}
 }

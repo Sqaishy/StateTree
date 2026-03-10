@@ -1,31 +1,43 @@
 using System;
-using StateTree;
 using UnityEditor;
 using UnityEngine;
 
-namespace StateTreeSystem.Authoring.Code
+namespace StateTree.Authoring.Code
 {
-	[CreateAssetMenu(menuName = "State Tree/Authoring Graph")]
-	public class AuthoringGraph : ScriptableObject
+	public abstract class AuthoringGraph : ScriptableObject
 	{
 		[SerializeField] private StateGraph stateGraph;
 
 		public StateGraph StateGraph => stateGraph;
 
-		private void Awake()
+		private void OnEnable()
 		{
+			stateGraph = GetOrCreateStateGraph();
+		}
+
+		public abstract StateGraph CreateRuntimeGraph();
+		public abstract StateBlackboard CreateRuntimeBlackboard();
+
+		private StateGraph GetOrCreateStateGraph()
+		{
+			if (stateGraph != null)
+				return stateGraph;
+
 			AuthoringGraph authoringGraph = this;
 
-			string path = AssetDatabase.GetAssetPath(authoringGraph);
+			StateGraph newGraph = CreateRuntimeGraph();
 
-			if (!EditorUtility.IsPersistent(authoringGraph))
-				return;
-
-			StateGraph newGraph = CreateInstance<StateGraph>();
 			newGraph.name = authoringGraph.name + "_StateTree";
 			authoringGraph.stateGraph = newGraph;
 			AssetDatabase.AddObjectToAsset(newGraph, authoringGraph);
 			AssetDatabase.SaveAssetIfDirty(authoringGraph);
+
+			return newGraph;
 		}
+	}
+
+	public abstract class CodeAuthoringGraph : AuthoringGraph
+	{
+		//Implement whatever else it needs to do on top
 	}
 }

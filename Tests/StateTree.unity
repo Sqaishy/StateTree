@@ -149,28 +149,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackboard:
-    rid: 3237347298612347444
+    rid: 3237347298612347549
   references:
     version: 2
     RefIds:
-    - rid: 3237347298612347444
+    - rid: 3237347298612347549
       type: {class: StateBlackboard, ns: StateTree, asm: StateTree}
       data:
         stateContexts:
-        - rid: 3237347298612347445
-        - rid: 3237347298612347446
-        - rid: 3237347298612347447
-    - rid: 3237347298612347445
+        - rid: 3237347298612347550
+        - rid: 3237347298612347551
+        - rid: 3237347298612347552
+    - rid: 3237347298612347550
       type: {class: CharacterContext, ns: StateTree, asm: StateTree}
       data:
         isTrue: 1
         target: {fileID: 2057049903}
-    - rid: 3237347298612347446
+    - rid: 3237347298612347551
       type: {class: TestContext, ns: StateTree, asm: StateTree}
       data:
         text: Awesome!
         direction: {x: 0, y: 0, z: 0}
-    - rid: 3237347298612347447
+    - rid: 3237347298612347552
       type: {class: CustomStateContext, ns: StateTree, asm: Assembly-CSharp}
       data:
         customFloat: 0
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bddf904cbc94b36865ed6643f10ad63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateGraph: {fileID: 2266762546527200341, guid: cafca269f335df645ba43e18e84e22f8, type: 2}
+  stateGraph: {fileID: 5489058151081435050, guid: 7c64d94c068a9c74292811f18ef88019, type: 2}
 --- !u!4 &136777064
 Transform:
   m_ObjectHideFlags: 0
@@ -264,28 +264,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackboard:
-    rid: 3237347298612347440
+    rid: 3237347298612347545
   references:
     version: 2
     RefIds:
-    - rid: 3237347298612347440
+    - rid: 3237347298612347545
       type: {class: StateBlackboard, ns: StateTree, asm: StateTree}
       data:
         stateContexts:
-        - rid: 3237347298612347441
-        - rid: 3237347298612347442
-        - rid: 3237347298612347443
-    - rid: 3237347298612347441
+        - rid: 3237347298612347546
+        - rid: 3237347298612347547
+        - rid: 3237347298612347548
+    - rid: 3237347298612347546
       type: {class: CharacterContext, ns: StateTree, asm: StateTree}
       data:
         isTrue: 1
         target: {fileID: 78907257}
-    - rid: 3237347298612347442
+    - rid: 3237347298612347547
       type: {class: TestContext, ns: StateTree, asm: StateTree}
       data:
         text: SOmetHing ElsE
         direction: {x: 1, y: 2, z: 3}
-    - rid: 3237347298612347443
+    - rid: 3237347298612347548
       type: {class: CustomStateContext, ns: StateTree, asm: Assembly-CSharp}
       data:
         customFloat: 13.57
