@@ -44,11 +44,12 @@ namespace StateTree
 
 				foreach (Transition transition in currentModule.Transitions)
 				{
+					transition.SetConditionAgent(stateGraph.Agent);
+
 					if (modulesChecked.Contains(transition.to))
 						continue;
 
 					transition.to.Graph = stateGraph;
-					transition.SetConditionAgent(stateGraph.Agent);
 					modulesToCheck.Add(transition.to);
 				}
 
