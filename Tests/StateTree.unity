@@ -149,28 +149,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackboard:
-    rid: 3237347298612347549
+    rid: 3237347345832083567
   references:
     version: 2
     RefIds:
-    - rid: 3237347298612347549
+    - rid: 3237347345832083567
       type: {class: StateBlackboard, ns: StateTree, asm: StateTree}
       data:
         stateContexts:
-        - rid: 3237347298612347550
-        - rid: 3237347298612347551
-        - rid: 3237347298612347552
-    - rid: 3237347298612347550
+        - rid: 3237347345832083568
+        - rid: 3237347345832083569
+        - rid: 3237347345832083570
+    - rid: 3237347345832083568
       type: {class: CharacterContext, ns: StateTree, asm: StateTree}
       data:
         isTrue: 1
         target: {fileID: 2057049903}
-    - rid: 3237347298612347551
+    - rid: 3237347345832083569
       type: {class: TestContext, ns: StateTree, asm: StateTree}
       data:
         text: Awesome!
         direction: {x: 0, y: 0, z: 0}
-    - rid: 3237347298612347552
+    - rid: 3237347345832083570
       type: {class: CustomStateContext, ns: StateTree, asm: Assembly-CSharp}
       data:
         customFloat: 0
@@ -264,28 +264,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackboard:
-    rid: 3237347298612347545
+    rid: 3237347345832083563
   references:
     version: 2
     RefIds:
-    - rid: 3237347298612347545
+    - rid: 3237347345832083563
       type: {class: StateBlackboard, ns: StateTree, asm: StateTree}
       data:
         stateContexts:
-        - rid: 3237347298612347546
-        - rid: 3237347298612347547
-        - rid: 3237347298612347548
-    - rid: 3237347298612347546
+        - rid: 3237347345832083564
+        - rid: 3237347345832083565
+        - rid: 3237347345832083566
+    - rid: 3237347345832083564
       type: {class: CharacterContext, ns: StateTree, asm: StateTree}
       data:
         isTrue: 1
         target: {fileID: 78907257}
-    - rid: 3237347298612347547
+    - rid: 3237347345832083565
       type: {class: TestContext, ns: StateTree, asm: StateTree}
       data:
         text: SOmetHing ElsE
         direction: {x: 1, y: 2, z: 3}
-    - rid: 3237347298612347548
+    - rid: 3237347345832083566
       type: {class: CustomStateContext, ns: StateTree, asm: Assembly-CSharp}
       data:
         customFloat: 13.57

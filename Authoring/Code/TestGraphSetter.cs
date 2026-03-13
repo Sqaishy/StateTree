@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.Properties;
 using UnityEditor;
 using UnityEditor.UIElements;
@@ -16,9 +17,9 @@ namespace StateTree.Authoring.Code
 	public class GraphSetterEditor : Editor
 	{
 		private TestGraphSetter targetObject;
-		private TestVisitor<StateGraph> visitor = new();
+		private PropertySetterVisitor<TestGraphSetter, StateGraph> visitor;
 		private ObjectField graphField;
-		private IProperty<TestGraphSetter> graphProperty;
+		private IProperty<TestGraphSetter> stateGraphProperty;
 
 		private const string GraphPropertyName = "stateGraph";
 
@@ -36,21 +37,24 @@ namespace StateTree.Authoring.Code
 			foreach (IProperty<TestGraphSetter> property in propertyBag.GetProperties(ref targetObject))
 			{
 				if (property.Name == GraphPropertyName)
-					graphProperty = property;
+					stateGraphProperty = property;
 			}
 
-			graphField = new ObjectField(graphProperty.Name)
+			visitor = new(stateGraphProperty);
+
+			graphField = new ObjectField(stateGraphProperty.Name)
 			{
 				objectType = typeof(StateGraph),
 			};
 
-			if (graphProperty.GetValue(ref targetObject) != null)
-				graphField.SetValueWithoutNotify((StateGraph)graphProperty.GetValue(ref targetObject));
+			if (stateGraphProperty.GetValue(ref targetObject) != null)
+				graphField.SetValueWithoutNotify((StateGraph)stateGraphProperty.GetValue(ref targetObject));
 
+			graphField.AddManipulator(new FieldResolver<AuthoringGraph>(graph =>
+			{
+				graphField.value = graph.StateGraph;
+			}));
 			graphField.RegisterValueChangedCallback(ValueChanged);
-
-			graphField.RegisterCallback<DragUpdatedEvent>(DragUpdated);
-			graphField.RegisterCallback<DragExitedEvent>(DragPerform);
 
 			root.Add(graphField);
 
@@ -61,52 +65,9 @@ namespace StateTree.Authoring.Code
 
 		private void ValueChanged(ChangeEvent<Object> evt)
 		{
-			visitor.NewValue = evt.newValue as StateGraph;
-
-			PropertyContainer.Accept(visitor, ref targetObject);
+			visitor.SetValue(ref targetObject, (StateGraph)evt.newValue);
 
 			EditorUtility.SetDirty(targetObject);
-		}
-
-		private void DragUpdated(DragUpdatedEvent evt)
-		{
-			if (DragAndDrop.objectReferences.Length == 1 && typeof(AuthoringGraph)
-				    .IsAssignableFrom(DragAndDrop.objectReferences[0].GetType()))
-			{
-				DragAndDrop.AcceptDrag();
-				DragAndDrop.visualMode = DragAndDropVisualMode.Link;
-			}
-		}
-
-		private void DragPerform(DragExitedEvent evt)
-		{
-			AuthoringGraph graph = DragAndDrop.objectReferences[0] as AuthoringGraph;
-
-			if (graph == null)
-				return;
-
-			graphField.value = graph.StateGraph;
-		}
-	}
-
-	public class TestVisitor<T> : IPropertyBagVisitor, IPropertyVisitor
-	{
-		public T NewValue { get; set; }
-
-		public void Visit<TContainer>(IPropertyBag<TContainer> properties, ref TContainer container)
-		{
-			foreach (IProperty<TContainer> property in properties.GetProperties(ref container))
-			{
-				property.Accept(this, ref container);
-			}
-		}
-
-		public void Visit<TContainer, TValue>(Property<TContainer, TValue> property, ref TContainer container)
-		{
-			if (typeof(TValue) != typeof(T))
-				return;
-
-			property.SetValue(ref container, (TValue)(object)NewValue);
 		}
 	}
 }

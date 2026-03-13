@@ -36,8 +36,19 @@ namespace StateTree.Authoring.Code
 		}
 	}
 
-	public abstract class CodeAuthoringGraph : AuthoringGraph
+	/// <summary>
+	/// Used to create authoring graphs through a custom editor window
+	/// </summary>
+	public class WindowAuthoringGraph : AuthoringGraph
 	{
-		//Implement whatever else it needs to do on top
+		public override StateGraph CreateRuntimeGraph()
+		{
+			throw new NotImplementedException();
+		}
+
+		public override StateBlackboard CreateRuntimeBlackboard()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

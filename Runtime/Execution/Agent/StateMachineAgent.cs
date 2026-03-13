@@ -4,7 +4,7 @@ using UnityEngine;
 namespace StateTree
 {
 
-    public class StateMachineAgent : StateTreeAgent
+    public class StateMachineAgent : MonoBehaviour
     {
         [SerializeField] private StateGraph stateGraph;
         [SerializeField] private StateBlackboard blackboard;
@@ -23,7 +23,8 @@ namespace StateTree
 
         #endif
 
-        protected override void Awake()
+        //TODO Come back and fix this class at some point
+        /*protected override void Awake()
         {
             blackboard.TryGetContext(out CharacterContext cc);
 
@@ -46,7 +47,7 @@ namespace StateTree
             idleState.AddTransition(investigateState, new Condition[] { predicateTrue },
                 ConditionOperator.AnyTrue);
             investigateState.AddTransition(idleState, new Condition[] { predicateFalse },
-                ConditionOperator.AnyTrue);*/
+                ConditionOperator.AnyTrue);#1#
 
             stateGraph = new StateGraphBuilder(this, idleState).Build();
             stateGraph.name = "New State Graph";
@@ -59,7 +60,7 @@ namespace StateTree
         protected override void CreateBlackboard()
         {
             RebuildBlackboard();
-        }
+        }*/
 
         #region Agent Editor Validation
 
