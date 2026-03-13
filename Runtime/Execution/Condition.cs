@@ -22,6 +22,8 @@ namespace StateTree
 					if (condition.IsTrue())
 						return true;
 				}
+
+				return false;
 			}
 
 			foreach (Condition condition in conditions)
