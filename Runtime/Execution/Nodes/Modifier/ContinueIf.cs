@@ -18,15 +18,15 @@ namespace StateTree
 		{
 			this.conditions = conditions;
 			this.conditionOperator = conditionOperator;
-
-			foreach (Condition condition in this.conditions)
-				condition.SetAgent(Module.Graph.Agent);
 		}
 
 		protected override Status Enter()
 		{
 			foreach (Condition condition in conditions)
+			{
+				condition.SetAgent(Module.Graph.Agent);
 				condition.Enter();
+			}
 
 			if (!Condition.CheckConditions(conditions, conditionOperator))
 				return Status.Running;

@@ -17,15 +17,17 @@ namespace StateTree
 		{
 			this.conditions = conditions;
 			this.conditionOperator = conditionOperator;
-
-			foreach (Condition condition in this.conditions)
-				condition.SetAgent(Module.Graph.Agent);
 		}
 
 		protected override Status Enter()
 		{
 			foreach (Condition condition in conditions)
+			{
+				//TODO Move this stupid shit out of the enter and into when the graph is being made
+				//Also same dumb shit in ContinueIf class
+				condition.SetAgent(Module.Graph.Agent);
 				condition.Enter();
+			}
 
 			if (Condition.CheckConditions(conditions, conditionOperator))
 				return Status.Failure;
