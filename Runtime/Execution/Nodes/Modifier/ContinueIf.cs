@@ -8,7 +8,7 @@ namespace StateTree
 		private Condition[] conditions;
 		private ConditionOperator conditionOperator;
 		private bool childStarted;
-		
+
 		public ContinueIf(Condition[] conditions) : this(conditions, ConditionOperator.AllTrue)
 		{
 
@@ -18,6 +18,9 @@ namespace StateTree
 		{
 			this.conditions = conditions;
 			this.conditionOperator = conditionOperator;
+
+			foreach (Condition condition in this.conditions)
+				condition.SetAgent(Module.Graph.Agent);
 		}
 
 		protected override Status Enter()
@@ -33,22 +36,22 @@ namespace StateTree
 
 		protected override Status Update()
 		{
-			if (!Condition.CheckConditions(conditions, conditionOperator)) 
+			if (!Condition.CheckConditions(conditions, conditionOperator))
 				return Status.Running;
-			
+
 			if (!childStarted)
 				return StartChild();
-			
+
 			return Child.OnUpdate();
 		}
 
 		protected override void Exit()
 		{
 			childStarted = false;
-			
+
 			foreach (Condition condition in conditions)
 				condition.Exit();
-			
+
 			base.Exit();
 		}
 

@@ -17,6 +17,9 @@ namespace StateTree
 		{
 			this.conditions = conditions;
 			this.conditionOperator = conditionOperator;
+
+			foreach (Condition condition in this.conditions)
+				condition.SetAgent(Module.Graph.Agent);
 		}
 
 		protected override Status Enter()
