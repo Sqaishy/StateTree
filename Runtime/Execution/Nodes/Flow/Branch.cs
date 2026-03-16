@@ -19,13 +19,27 @@ namespace StateTree
 		public StateNode TrueNode
 		{
 			get => trueNode;
-			set => trueNode = value;
+			set
+			{
+				if (trueNode != null)
+					RemoveChild(trueNode);
+
+				trueNode = value;
+				AddChild(trueNode);
+			}
 		}
 
 		public StateNode FalseNode
 		{
 			get => falseNode;
-			set => falseNode = value;
+			set
+			{
+				if (falseNode != null)
+					RemoveChild(falseNode);
+
+				falseNode = value;
+				AddChild(falseNode);
+			}
 		}
 
 		public Branch(Condition[] conditions) : this(conditions, ConditionOperator.AllTrue)
