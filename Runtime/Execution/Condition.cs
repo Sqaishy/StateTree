@@ -4,6 +4,10 @@ namespace StateTree
 {
 	public abstract class Condition
 	{
+		/// <summary>
+		/// When true returns the opposite result for the condition
+		/// </summary>
+		public bool Negate { get; set; }
 		protected StateTreeAgent Agent { get; private set; }
 
 		public abstract bool IsTrue();
@@ -13,13 +17,19 @@ namespace StateTree
 		public virtual void Enter() { }
 		public virtual void Exit() { }
 
+		private bool CheckCondition()
+		{
+			bool result = IsTrue();
+			return Negate ? !result : result;
+		}
+
 		public static bool CheckConditions(Condition[] conditions, ConditionOperator conditionOperator)
 		{
 			if (conditionOperator == ConditionOperator.AnyTrue)
 			{
 				foreach (Condition condition in conditions)
 				{
-					if (condition.IsTrue())
+					if (condition.CheckCondition())
 						return true;
 				}
 
@@ -28,7 +38,7 @@ namespace StateTree
 
 			foreach (Condition condition in conditions)
 			{
-				if (!condition.IsTrue())
+				if (!condition.CheckCondition())
 					return false;
 			}
 
