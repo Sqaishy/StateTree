@@ -23,14 +23,22 @@ namespace StateTree.Authoring.Code
 
 		protected override void RegisterCallbacksOnTarget()
 		{
+#if UNITY_EDITOR
+
 			target.RegisterCallback<DragUpdatedEvent>(DragUpdated);
 			target.RegisterCallback<DragExitedEvent>(DragPerform);
+
+#endif
 		}
 
 		protected override void UnregisterCallbacksFromTarget()
 		{
+#if UNITY_EDITOR
+
 			target.UnregisterCallback<DragUpdatedEvent>(DragUpdated);
 			target.UnregisterCallback<DragExitedEvent>(DragPerform);
+
+#endif
 		}
 
 		private void DragUpdated(DragUpdatedEvent evt)
