@@ -1,10 +1,13 @@
 using System.Collections.Generic;
 using Unity.Properties;
-using UnityEditor;
-using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Object = UnityEngine.Object;
+
+#if UNITY_EDITOR
+using UnityEditor;
+using UnityEditor.UIElements;
+#endif
 
 namespace StateTree.Authoring.Code
 {
@@ -12,6 +15,8 @@ namespace StateTree.Authoring.Code
 	{
 		[SerializeField] private StateGraph stateGraph;
 	}
+
+#if UNITY_EDITOR
 
 	[CustomEditor(typeof(TestGraphSetter))]
 	public class GraphSetterEditor : Editor
@@ -70,4 +75,6 @@ namespace StateTree.Authoring.Code
 			EditorUtility.SetDirty(targetObject);
 		}
 	}
+
+	#endif
 }

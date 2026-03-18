@@ -1,7 +1,10 @@
 using System;
-using UnityEditor;
 using UnityEngine.UIElements;
 using Object = UnityEngine.Object;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace StateTree.Authoring.Code
 {
@@ -11,6 +14,8 @@ namespace StateTree.Authoring.Code
 	/// <typeparam name="T">The type to resolve in the field</typeparam>
 	public class FieldResolver<T> : PointerManipulator where T : Object
 	{
+#if UNITY_EDITOR
+
 		private Action<T> action;
 
 		public FieldResolver(Action<T> dragPerformed)
@@ -49,5 +54,7 @@ namespace StateTree.Authoring.Code
 
 			action?.Invoke(check);
 		}
+
+#endif
 	}
 }
