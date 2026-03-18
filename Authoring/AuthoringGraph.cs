@@ -10,6 +10,8 @@ namespace StateTree.Authoring.Code
 
 		public StateGraph StateGraph => stateGraph;
 
+#if UNITY_EDITOR
+
 		private void OnEnable()
 		{
 			stateGraph = GetOrCreateStateGraph();
@@ -34,6 +36,8 @@ namespace StateTree.Authoring.Code
 
 			return newGraph;
 		}
+
+#endif
 	}
 
 	/// <summary>
