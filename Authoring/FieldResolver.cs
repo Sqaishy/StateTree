@@ -14,8 +14,6 @@ namespace StateTree.Authoring.Code
 	/// <typeparam name="T">The type to resolve in the field</typeparam>
 	public class FieldResolver<T> : PointerManipulator where T : Object
 	{
-#if UNITY_EDITOR
-
 		private Action<T> action;
 
 		public FieldResolver(Action<T> dragPerformed)
@@ -37,24 +35,30 @@ namespace StateTree.Authoring.Code
 
 		private void DragUpdated(DragUpdatedEvent evt)
 		{
+#if UNITY_EDITOR
+
 			if (DragAndDrop.objectReferences.Length == 1 && typeof(T)
 				    .IsAssignableFrom(DragAndDrop.objectReferences[0].GetType()))
 			{
 				DragAndDrop.AcceptDrag();
 				DragAndDrop.visualMode = DragAndDropVisualMode.Link;
 			}
+
+#endif
 		}
 
 		private void DragPerform(DragExitedEvent evt)
 		{
+#if UNITY_EDITOR
+
 			T check = DragAndDrop.objectReferences[0] as T;
 
 			if (check == null)
 				return;
 
 			action?.Invoke(check);
-		}
 
 #endif
+		}
 	}
 }
