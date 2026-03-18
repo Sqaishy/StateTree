@@ -8,6 +8,7 @@ using UnityEditor;
 
 namespace StateTree.Authoring.Code
 {
+	#if UNITY_EDITOR
 	/// <summary>
 	/// Resolve the type when it is dropped into a field of another type
 	/// </summary>
@@ -69,4 +70,6 @@ namespace StateTree.Authoring.Code
 #endif
 		}
 	}
+
+#endif
 }
