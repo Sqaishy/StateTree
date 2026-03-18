@@ -10,8 +10,6 @@ namespace StateTree.Authoring.Code
 
 		public StateGraph StateGraph => stateGraph;
 
-#if UNITY_EDITOR
-
 		private void OnEnable()
 		{
 			stateGraph = GetOrCreateStateGraph();
@@ -25,6 +23,8 @@ namespace StateTree.Authoring.Code
 			if (stateGraph != null)
 				return stateGraph;
 
+#if UNITY_EDITOR
+
 			AuthoringGraph authoringGraph = this;
 
 			StateGraph newGraph = CreateRuntimeGraph();
@@ -35,9 +35,13 @@ namespace StateTree.Authoring.Code
 			AssetDatabase.SaveAssetIfDirty(authoringGraph);
 
 			return newGraph;
-		}
 
-#endif
+			#else
+
+			return ScriptableObject.CreateInstance<StateGraph>();
+
+			#endif
+		}
 	}
 
 	/// <summary>
