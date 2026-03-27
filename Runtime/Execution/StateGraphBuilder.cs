@@ -39,6 +39,8 @@ namespace StateTree
 				StateModule currentModule = modulesToCheck[0];
 				modulesChecked.Add(currentModule);
 
+				currentModule.Graph = stateGraph;
+
 				foreach (StateNode node in currentModule.GetChildren())
 					node.Module = currentModule;
 
@@ -49,7 +51,6 @@ namespace StateTree
 					if (modulesChecked.Contains(transition.to))
 						continue;
 
-					transition.to.Graph = stateGraph;
 					modulesToCheck.Add(transition.to);
 				}
 
