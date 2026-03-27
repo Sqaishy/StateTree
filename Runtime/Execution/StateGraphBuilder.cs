@@ -53,6 +53,20 @@ namespace StateTree
 					modulesToCheck.Add(transition.to);
 				}
 
+				if (currentModule.SuccessTransition != null)
+				{
+					if (!modulesChecked.Contains(currentModule.SuccessTransition)
+					    || !modulesToCheck.Contains(currentModule.SuccessTransition))
+						modulesToCheck.Add(currentModule.SuccessTransition);
+				}
+
+				if (currentModule.FailureTransition != null)
+				{
+					if (!modulesChecked.Contains(currentModule.FailureTransition)
+					    || !modulesToCheck.Contains(currentModule.FailureTransition))
+						modulesToCheck.Add(currentModule.FailureTransition);
+				}
+
 				modulesToCheck.Remove(currentModule);
 			}
 		}

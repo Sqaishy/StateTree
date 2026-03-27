@@ -32,6 +32,9 @@ namespace StateTree
 		private StateGraph graph;
 		private List<StateNode> children = new();
 
+		internal StateModule SuccessTransition => successTransition;
+		internal StateModule FailureTransition => failureTransition;
+
 		public StateModule() { }
 
 		public StateModule(string stateName) => name = stateName;
